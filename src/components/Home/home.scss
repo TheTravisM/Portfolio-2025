@@ -78,10 +78,10 @@ section#home {
       display: inline-flex;
       flex-direction: column;
       width: min(100%, 400px);
-      box-shadow: 0 150px 150px #e945e333;
+      box-shadow: 0 150px 150px #11ffc333;
       transition: 0.5s;
       &:hover {
-        box-shadow: 0 150px 150px #e945e355;
+        box-shadow: 0 150px 150px #11ffc355;
       }
 
       img {
