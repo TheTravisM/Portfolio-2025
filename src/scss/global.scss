@@ -1,0 +1,50 @@
+
+:root {
+  --teal: #11ffc3;
+  --hot-pink: rgba(253, 0, 249,1);
+  --dark-gray: rgba(26, 26, 26,1);
+  --80-linear-rotate: linear-gradient(var(--angle),var(--teal), var(--hot-pink));
+  --80-linear-shine: linear-gradient(to right,var(--teal), var(--hot-pink));
+}
+
+html body *,
+html body *::before,
+html body *::after {
+  transition: all .25s linear;
+}
+
+// Nav
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 45deg;
+  inherits: false;
+}
+
+@keyframes rotate {
+  from {
+    --angle: 45deg;
+  }
+  to {
+    --angle: 405deg; /* 45deg + 360deg */
+  }
+}
+
+// Home Screen
+@keyframes shine {
+  to {
+      background-position: 200% center;
+  }
+}
+.animation {
+  transform: translateY(50px);
+  filter: blur(20px);
+  opacity: 0;
+  transition: 0.5s;
+
+  &.active {
+    transform: translateY(0px);
+    filter: blur(0px);
+    opacity: 1;
+
+  }
+}

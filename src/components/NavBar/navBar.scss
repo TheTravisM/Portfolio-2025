@@ -1,0 +1,118 @@
+header {
+  position: fixed;
+  width: 1300px;
+  max-width: 100%;
+  height: 60px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  img {
+    width: 50px;
+  }
+  .logo {
+    font-size: 40px;
+    font-weight: bold;
+    background-size: 200% auto;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-image: var(--80-linear-rotate);
+    animation: 20s rotate linear infinite;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: red;
+    button {
+      font-family: "MuseoModerno";
+      font-size: 18px;
+      font-weight: 200;
+      color: #eee;
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid rgba(253, 0, 249,0);
+      background: rgba(26, 26, 26,0);
+      padding: 10px 16px;
+      &:hover {
+        color: #fff;
+        background: rgba(0,0,0,1);
+        border: 1px solid rgba(253, 0, 249,.25);
+        transition: all .25s ease-in;
+        cursor: pointer;
+      }
+      &.active {
+        color: #e945e3;
+        text-shadow: 0 0 5px #7A43B6;
+        border: 1px solid rgba(253, 0, 249,.25);
+        background: rgba(26, 26, 26,.25);
+        transition: all .5s ease-in;
+      }
+    }
+  }
+  .icon-bar {
+    width: 30px;
+    display: none;
+    background: transparent;
+    color: white;
+    border:0;
+    font-size: 36px;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  header {
+    nav {
+      width: 80%;
+      height: 100vh;
+      position: fixed;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      inset: 0 auto 0 0;
+      background-color: #eee;
+      color: #0F1225;
+      padding: 50px;
+      box-sizing: border-box;
+      font-weight: bold;
+      left: -100%;
+      transition: .5s;
+      button {
+        color: #0F1225;
+        border: none;
+        background: transparent;
+        font-size: 24px;
+        cursor: pointer;
+        &:hover {
+          color: rgba(253, 0, 249);
+          background: transparent;
+          border: none;
+          transition: all .25s ease-in;
+        }
+        &.active {
+          color: #e945e3;
+          text-shadow: none;
+          border: none;
+          background: transparent;
+          transition: all .5s ease-in;
+        }
+      }
+
+      &.nav--expanded,
+      &.nav--active {
+        left: 0;
+      }
+    }
+
+    .icon-bar {
+      display: block;
+    }
+  }
+}
